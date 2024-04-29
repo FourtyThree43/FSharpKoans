@@ -48,7 +48,7 @@ module ``about functions`` =
             text.Replace(" ", "")
 
         let auctioneered = sayItLikeAnAuctioneer "going once going twice sold to the lady in red"
-        AssertEquality auctioneered __
+        AssertEquality auctioneered "goingoncegoingtwicesoldtotheladyinred"
 
         //TRY IT: What happens if you remove the type annotation on text?
 
@@ -63,7 +63,7 @@ module ``about functions`` =
 
         let caffeinatedReply = caffeinate "hello there"
 
-        AssertEquality caffeinatedReply __
+        AssertEquality caffeinatedReply "HELLO THERE!!!"
 
         (* NOTE: Accessing the suffix variable in the nested caffeinate function
                  is known as a closure.
