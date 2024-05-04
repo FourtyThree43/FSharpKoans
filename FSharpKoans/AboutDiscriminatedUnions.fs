@@ -24,7 +24,7 @@ module ``about discriminated unions`` =
     [<Koan>]
     let DiscriminatedUnionsCaptureASetOfOptions() =
 
-        let toColor condiment = 
+        let toColor condiment =
             match condiment with
             | Mustard -> "yellow"
             | Ketchup -> "red"
@@ -33,9 +33,9 @@ module ``about discriminated unions`` =
 
         let choice = Mustard
 
-        AssertEquality (toColor choice) __
+        AssertEquality (toColor choice) "yellow"
 
-        (* TRY IT: What happens if you remove a case from the above pattern 
+        (* TRY IT: What happens if you remove a case from the above pattern
                    match? *)
 
     [<Koan>]
@@ -48,8 +48,11 @@ module ``about discriminated unions`` =
             | Bourbon b -> "I prefer Bookers to " + b
             | Number _ -> "I'm partial to 7"
 
-        let bourbonResult = saySomethingAboutYourFavorite <| Bourbon "Maker's Mark"
-        let numberResult = saySomethingAboutYourFavorite <| Number 7
-        
-        AssertEquality bourbonResult __
-        AssertEquality numberResult __
+        let bourbonResult =
+            saySomethingAboutYourFavorite <| Bourbon "Maker's Mark"
+
+        let numberResult =
+            saySomethingAboutYourFavorite <| Number 7
+
+        AssertEquality bourbonResult "I prefer Bookers to Maker's Mark"
+        AssertEquality numberResult "me too!"
